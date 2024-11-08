@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Laptop Specifications</title>
+</head>
+<body>
+    <div class="form">
+        <form action="{{url_for('submit_form')}}" method="POST">
+            <input type="text" name="ram" placeholder="Ram" required="required">
+            <input type="text" name="weight" placeholder="Weight" required="required">
+            
+            <label>
+                <input type="checkbox" name="touchscreen" value="Yes"> Touchscreen
+            </label>
+            
+            <label>
+                <input type="checkbox" name="ips" value="Yes"> IPS
+            </label>
+            
+            <input type="text" name="ppi" placeholder="PPI" required="required">
+            <input type="text" name="hdd" placeholder="HDD" required="required">
+            <input type="text" name="ssd" placeholder="SSD" required="required">
+            
+            <select name="company" required="required">
+                <option value="Acer">Acer</option>
+                <option value="Apple">Apple</option>
+                <option value="Asus">Asus</option>
+                <option value="Dell">Dell</option>
+                <option value="HP">HP</option>
+                <option value="Lenovo">Lenovo</option>
+                <option value="MSI">MSI</option>
+                <option value="Toshiba">Toshiba</option>
+            </select>
+
+            <label>Type of Laptop:</label><br>
+            <label><input type="checkbox" name="TypeName" value="2 in 1 Convertible"> 2 in 1 Convertible</label><br>
+            <label><input type="checkbox" name="TypeName" value="Gaming"> Gaming</label><br>
+            <label><input type="checkbox" name="TypeName" value="Netbook"> Netbook</label><br>
+            <label><input type="checkbox" name="TypeName" value="Notebook"> Notebook</label><br>
+            <label><input type="checkbox" name="TypeName" value="Ultrabook"> Ultrabook</label><br>
+            <label><input type="checkbox" name="TypeName" value="Workstation"> Workstation</label><br>
+            
+            <select name="Cpu_brand" required="required">
+                <option value="AMD Processor">AMD Processor</option>
+                <option value="Intel Core i3">Intel Core i3</option>
+                <option value="Intel Core i5">Intel Core i5</option>
+                <option value="Intel Core i7">Intel Core i7</option>
+                <option value="Other Intel Processor">Other Intel Processor</option>
+            </select>
+
+            <select name="Gpu_brand" required="required">
+                <option value="AMD">AMD</option>
+                <option value="Intel">Intel</option>
+                <option value="Nvidia">Nvidia</option>
+            </select>
+
+            <select name="os" required="required">
+                <option value="Mac">Mac</option>
+                <option value="Others/No OS/Linux">Others/No OS/Linux</option>
+                <option value="Windows">Windows</option>
+            </select>
+
+            <button type="submit">Predict</button>
+        </form>
+        {{prediction_text}}
+    </div>
+</body>
+</html>
