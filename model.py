@@ -14,7 +14,7 @@ import seaborn as sns
 # In[2]:
 
 
-df=pd.read_excel("C:/Users/tanuj/Downloads/Data_Train.xlsx")
+df=pd.read_excel("Data_Train.xlsx")
 df.head()
 
 
